@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
+    <link rel="shortcut icon"
+        href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/500px-Spotify_logo_without_text.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail"
+        type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+</head>
+
+<body class="bg-black text-white font-sans">
+    <!-- layout -->
+    <div class="flex h-screen">
+        <!-- side -->
+
+        <aside class="w-74 bg-black flex flex-col p-5 border-r border-zinc-800">
+            <div class="head flex flex-row gap-5 text-center">
+
+                <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/spotify-white-icon.png"
+                    alt="Spotify" class="w-12 h-12 mb-8">
+                <h1 class="font-bold text-3xl mt-1 text-green-500">Spotify</h1>
+            </div>
+
+
+            <!-- create playlist -->
+            <div class="mt-2 space-y-4 ">
+                <div class="bg-zinc-900  p-4 rounded-lg">
+                    <p class="font-semibold mb-2 ">Create your first playlist</p>
+                    <p class="text-sm text-gray-400 mb-3">It's easy, we'll help you</p>
+                    <button class="bg-white text-black  px-5 py-2 rounded-full font-bold text-sm">
+                        Create playlist
+                    </button>
+                </div>
+
+                <div class="bg-zinc-900  p-4 rounded-lg">
+                    <p class="font-semibold mb-2 ">Let's find some podcasts to follow</p>
+                    <p class="text-sm text-gray-400 mb-3">We'll keep you updated on new episodes</p>
+                    <button class="bg-white text-black  px-5 py-2 rounded-full font-bold text-sm">
+                        Browse podcasts
+                    </button>
+                </div>
+            </div>
+            <!-- file upload -->
+            <div class="my-5 mx-auto">
+                <label
+                    class="cursor-pointer bg-green-500 text-black px-4 py-2 rounded-lg text-sm font-bold hover:bg-green-400">Choose
+                    Music
+                    <input type="file" id="fileInput" webkitdirectory directory multiple hidden>
+                </label>
+
+            </div>
+            <!-- footer -->
+            <div class="text-xs text-gray-400 mt-4 ">
+                <p class="mb-2">Legal • Privacy • Cookies</p>
+                <button class="px-4 py-1 border border-gray-400 rounded-full text-sm">English</button>
+            </div>
+        </aside>
+
+        <!-- main section -->
+        <div class="flex-1 flex flex-col">
+            <!-- header -->
+            <header class="p-4 bg-black flex items-center justify-between border-b border-zinc-800">
+                <div class="flex items-center space-x-2 w-full max-w-lg bg-zinc-900 px-4 py-3 rounded-full ml-20 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                    </svg>
+                    <input id="search" type="text" placeholder="What do you want to play?"
+                        class="bg-transparent outline-none text-sm w-full " />
+                </div>
+
+                <div class="space-x-3 ">
+                    <button class="font-semibold ">Sign up</button>
+                    <button class="bg-white text-black px-4 py-2 rounded-full font-bold">Log in</button>
+                </div>
+            </header>
+            <!-- main content-->
+            <main class="flex-1 overflow-y-auto p-6  ">
+
+                <!-- trending songs -->
+                <section class="mb-8 ">
+                    <h2 class="text-2xl font-bold mb-4 ">Trending Songs</h2>
+                    <div id="songsGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-5 gap-6">
+                        <!-- songs will be opened dynamically -->
+                    </div>
+                </section>
+
+                <!-- popular artists -->
+                <section>
+                    <h2 class="text-2xl font-bold mb-4">Popular Artists</h2>
+                    <div class="flex space-x-6 overflow-x-auto">
+                        <div class="w-38 shrink-0 text-center">
+                            <img src="./imgs/1.jfif"
+                                class="w-28 h-28 mx-auto rounded-full object-cover mb-2" alt="">
+                            <p class="text-sm">Abdul Aziz Al Rahsed</p>
+                        </div>
+
+                        <div class="w-38 shrink-0 text-center">
+                            <img src="./imgs/seidd allah huma.jpg"
+                                class="w-28 h-28 mx-auto rounded-full object-cover mb-2" alt="">
+                            <p class="text-sm">Seidd</p>
+                        </div>
+
+                        <div class="w-38 shrink-0 text-center">
+                            <img src="./imgs/sami yusuf.jfif" class="w-28 h-28 mx-auto rounded-full object-cover mb-2"
+                                alt="">
+                            <p class="text-sm">Sami Yusuf</p>
+                        </div>
+
+                        <div class="w-38 shrink-0 text-center">
+                            <img src="./imgs/abdullah aljarah.jfif"
+                                class="w-28 h-28 mx-auto rounded-full object-cover mb-2" alt="">
+                            <p class="text-sm">Abdullah Aljarallah</p>
+                        </div>
+
+                        <div class="w-38 shrink-0 text-center">
+                            <img src="./imgs/baraa masoud.jfif" class="w-28 h-28 mx-auto rounded-full object-cover mb-2"
+                                alt="">
+                            <p class="text-sm">Baraa Masoud</p>
+                        </div>
+
+                        <div class="w-38 shrink-0 text-center">
+                            <img src="./imgs/humood alkhuder kun anta.jfif"
+                                class="w-28 h-28 mx-auto rounded-full object-cover mb-2" alt="">
+                            <p class="text-sm">Humood Alkhuder</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- player bar -->
+            <footer class="bg-zinc-900 p-3 flex items-center justify-between border-t border-zinc-800">
+                <div class="flex items-center space-x-3 w-1/4 min-w-0 ">
+                    <img src="" id="currentCover" class="w-12 h-12 object-cover rounded " alt="cover">
+
+                    <div>
+                        <p id="currentTitle" class="text-sm font-bold truncate max-w-40 "></p>
+                        <p id="currentArtist" class="text-xs text-gray-400"> </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center w-1/2 mx-6">
+                    <div class="flex items-center space-x-4 mb-2 ">
+                        <button id="prevBtn" class="hover:text-green-400"> <i class="ti ti-player-track-prev" id="prev" ></i>
+                        </button>
+
+                        <button id="playBtn" class="hover:text-green-400 text-xl "> <i class="ti ti-player-play" id="play" ></i>
+                        </button>
+
+                        <button id="nextBtn" class="hover:text-green-400"> <i class="ti ti-player-track-next" id="next" ></i>
+                        </button>
+                    </div>
+                    <input  id="progress" value="0" class="w-full accent-green-600 h-1"  type="range"/>
+                </div>
+                <input type="range" id="volume" min="0" max="1" step="0.01" value="1" class="w-32 accent-green-600 h-1" >
+            </footer>
+        </div>
+    </div>
+    <div>
+        <audio  id="audio"></audio>
+    </div>
+
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
